@@ -1,6 +1,6 @@
-import {connectDB} from '../../../../db/index.js';
+import {connectDB} from '@/db/index.js';
 import {NextRequest, NextResponse} from 'next/server';
-import {User} from '../../../../models/user.model.js';
+import {User} from '@/models/user.model.js';
 
 
 
