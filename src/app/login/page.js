@@ -7,10 +7,12 @@ import { useState } from "react";
 
 
 
+
 export default function() {
     const router = useRouter();
     const [user, setUser] = useState({email:"", password:""});
     const [loading, setLoading] = useState(false);
+    
 
     const handleLogin = async(e)=> {
         e.preventDefault();
@@ -37,6 +39,7 @@ export default function() {
             <button type="submit" className="py-2 px-5 bg-green-400 font-bold rounded-md font-serif" onClick={handleLogin}>Login</button>
          </div>
     </div>
+
     )
 }
 

@@ -28,7 +28,12 @@ export async function POST(request) {
         }
         const token = await user.token();
         const loginUser = await User.findById(user._id).select('-password');
-        return NextResponse.json({message:"Login successfull", success:true,loginUser,token});
+        const response =  NextResponse.json({message:"Login successfull", success:true,loginUser,token});
+        response.cookies.set("token", token, {
+            httpOnly: true, 
+            
+        })
+        return response;
       } catch (error) {
         return NextResponse.json({error:error.message, status:500});
       }

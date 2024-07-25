@@ -30,7 +30,7 @@ userSchema.methods.comparePassword = async function(password) {
 }
 
 userSchema.methods.token = async function() {
-    return await jwt.sign({userId:this._id}, "test", {expiresIn:"1d"});
+    return await jwt.sign({userId:this._id}, process.env.JWT_SECRET, {expiresIn:process.env.JWT_LIFETIME});
 }
 
 
